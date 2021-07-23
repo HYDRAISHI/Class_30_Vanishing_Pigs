@@ -40,6 +40,14 @@ function setup(){
 
     //log6 = new Log(230,180,80, PI/2);
     slingshot = new SlingShot(bird.body,{x:200, y:50});
+
+    //if(bird.isTouching(pig1)){
+    //    pig1.visible = false;
+    //}
+
+    //if(bird.isTouching(pig3)){
+    //    pig3.visible = false;
+    //}
 }
 
 function draw(){
@@ -74,4 +82,10 @@ function mouseDragged(){
 
 function mouseReleased(){
     slingshot.fly();
+}
+
+function keyPressed(){
+    if(keyCode === 32){
+       slingshot.attach(bird.body); 
+    }
 }
